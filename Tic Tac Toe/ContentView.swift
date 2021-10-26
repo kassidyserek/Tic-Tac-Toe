@@ -16,13 +16,17 @@ struct ContentView: View {
                 .padding()
             LazyVGrid(columns: Array(repeating: GridItem(.fixed(120), spacing: 15), count: 3), spacing: 15, content: {
                 ForEach(0..<9) { index in
-                    Color.blue
+                    ZStack {
+                        Color.blue
+                        Text("X")
+                            .font(.system(size: 90))
+                            .fontWeight(.heavy)
+                    }
                         .frame(width: 120, height: 120, alignment: .center)
                         .cornerRadius(30)
                 }
             })
-        }
-        .preferredColorScheme(.dark)
+        }        .preferredColorScheme(.dark)
     }
 }
 
